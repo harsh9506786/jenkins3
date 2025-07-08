@@ -9,6 +9,7 @@ pipeline {
         stage('Run') {
             steps {
                 bat 'node index.js'
+                bat 'node index2.js'
             }
         }
         stage('Test') {
