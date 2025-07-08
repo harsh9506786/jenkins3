@@ -25,7 +25,6 @@ pipeline {
                 bat 'mkdir "C:\\deploy-folder"'
                 bat 'copy index.js "C:\\deploy-folder\\"'
                 bat 'copy index2.js "C:\\deploy-folder\\"'
-                bat 'copy index.html "C:\\deploy-folder\\"'
             }
         }
     }
