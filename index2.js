@@ -1,0 +1,1 @@
+console.log("We are inside index2.js file")
