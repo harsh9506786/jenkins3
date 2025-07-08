@@ -15,7 +15,7 @@ pipeline {
 
          stage('Run2') {
             steps {
-                bat 'node '
+                bat 'node test.js'
             }
         }
 
