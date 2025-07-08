@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh 'node index.js'
+                bat 'node index.js'
             }
         }
         stage('Test') {
             steps {
-                sh 'node test.js'
+                bat 'node test.js'
             }
         }
     }
