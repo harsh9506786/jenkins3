@@ -20,12 +20,13 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+       stage('Deploy') {
             steps {
-                bat 'mkdir "C:\\deploy-folder"'
+                bat 'if not exist "C:\\deploy-folder" mkdir "C:\\deploy-folder"'
                 bat 'copy index.js "C:\\deploy-folder\\"'
                 bat 'copy index2.js "C:\\deploy-folder\\"'
-            }
-        }
+    }
+}
+
     }
 }
