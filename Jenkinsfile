@@ -12,6 +12,13 @@ pipeline {
                 bat 'node index2.js'
             }
         }
+
+         stage('Run2') {
+            steps {
+                bat 'node '
+            }
+        }
+
         stage('Test') {
             steps {
                 bat 'node test.js'
