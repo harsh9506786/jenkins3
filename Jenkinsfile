@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git branch: 'main' , url: 'https://github.com/harsh9506786/jenkins3.git'
+                git branch: 'main', url: 'https://github.com/harsh9506786/jenkins3.git'
             }
         }
 
@@ -20,24 +20,21 @@ pipeline {
             }
         }
 
-       stage('Deploy') {
+        stage('Deploy') {
             steps {
                 bat 'if not exist "C:\\deploy-folder" mkdir "C:\\deploy-folder"'
                 bat 'copy index.js "C:\\deploy-folder\\"'
                 bat 'copy index2.js "C:\\deploy-folder\\"'
                 bat 'copy index.html "C:\\deploy-folder\\"'
-    }
 
-    steps {
-    bat '''
-    if not exist "C:\\deploy-express" mkdir "C:\\deploy-express"
-    xcopy /s /y *.* "C:\\deploy-express\\"
-    cd C:\\deploy-express
-    npm install
-    start cmd /c "node server.js"
-    '''
-  }
-}
-
+                bat '''
+                if not exist "C:\\deploy-express" mkdir "C:\\deploy-express"
+                xcopy /s /y *.* "C:\\deploy-express\\"
+                cd C:\\deploy-express
+                npm install
+                start cmd /c "node server.js"
+                '''
+            }
+        }
     }
 }
